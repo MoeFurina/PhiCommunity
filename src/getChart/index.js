@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	fetch(
-		'https://api.github.com/repos/MoeFurina/PhiCommunity-Charts-Repo/contents'
+		'https://charts.phicm.focalors.ltd/content.json'
 	)
 		.then((res) => res.json())
 		.then((response) => {
