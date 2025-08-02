@@ -1,0 +1,9 @@
+{
+    "version": 2,
+    "buildCommand": "pnpm build",
+    "installCommand": "pnpm i",
+    "outputDirectory": "dist",
+    "github": {
+        "silent": true
+    }
+}
