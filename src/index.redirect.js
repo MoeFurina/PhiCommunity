@@ -1,11 +1,6 @@
 import './style.redirect.css';
 window.addEventListener('DOMContentLoaded', () => {
-	fetch('https://api.github.com/repos/MoeFurina/PhiCommunity/commits', {
-			headers: {
-				'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-				'Accept': 'application/vnd.github.v3+json'
-			}
-		})
+	fetch('https://api.github.com/repos/MoeFurina/PhiCommunity/commits')
 		.then((res) => {
 			if (!res.ok) {
 				throw new Error(`HTTP error! status: ${res.status}`);

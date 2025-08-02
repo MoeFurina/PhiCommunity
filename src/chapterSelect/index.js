@@ -19,13 +19,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			});
 		});
 	fetch(
-		'https://api.github.com/repos/MoeFurina/PhiCommunity/commits?per_page=1',
-		{
-			headers: {
-				'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
-				'Accept': 'application/vnd.github.v3+json'
-			}
-		}
+		'https://api.github.com/repos/MoeFurina/PhiCommunity/commits?per_page=1'
 	)
 		.then((res) => res.json())
 		.then((data) => {
