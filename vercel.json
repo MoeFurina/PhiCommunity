@@ -7,6 +7,6 @@
         "silent": true
     },
     "env": {
-        "GITHUB_TOKEN": "@github_token"
+        "GITHUB_TOKEN": "@github-token"
     }
 }
