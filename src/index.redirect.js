@@ -74,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
 		document.querySelector('button#gotoGHPages').style.display = 'none';
 	}
 	document.querySelector('button#ghRepo').addEventListener('click', () => {
-		window.open('https://github.com/Yuameshi/PhiCommunity');
+		window.open('https://github.com/MoeFurina/PhiCommunity');
 	});
 	document.querySelector('button#deviceReq').addEventListener('click', () => {
 		document

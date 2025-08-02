@@ -2,11 +2,11 @@
 	"name": "phi-community",
 	"version": "1.0.0",
 	"description": "A community driven project to make a game like phigros.",
-	"author": "Yuameshi",
+	"author": "MoeFurina",
 	"license": "GPL-3.0",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/Yuameshi/PhiCommunity.git"
+		"url": "https://github.com/MoeFurina/PhiCommunity.git"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
@@ -17,9 +17,9 @@
 		"build:vercel": "npm run build  -- --env charts-source=\"https://vercel.charts.phicm.focalors.ltd\""
 	},
 	"bugs": {
-		"url": "https://github.com/Yuameshi/PhiCommunity/issues"
+		"url": "https://github.com/MoeFurina/PhiCommunity/issues"
 	},
-	"homepage": "https://github.com/Yuameshi/PhiCommunity#readme",
+	"homepage": "https://github.com/MoeFurina/PhiCommunity#readme",
 	"devDependencies": {
 		"clean-webpack-plugin": "^4.0.0",
 		"copy-webpack-plugin": "^10.2.4",
