@@ -103,7 +103,7 @@ function SongList({ defaultLevel = 'ez' }) {
 			currentLevelSelected = [nextLevel];
 		}
 		fetch(
-			`https://charts.phicommunity.com.cn/${codename}/${songMeta['illustration']}`
+			`https://charts.phicm.focalors.ltd/${codename}/${songMeta['illustration']}`
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
@@ -117,12 +117,12 @@ function SongList({ defaultLevel = 'ez' }) {
 			.catch((err) => {
 				console.err(
 					'获取曲绘失败!',
-					`url: https://charts.phicommunity.com.cn/${codename}/${songMeta['illustration']}`,
+					`url: https://charts.phicm.focalors.ltd/${codename}/${songMeta['illustration']}`,
 					err
 				);
 			});
 		fetch(
-			`https://charts.phicommunity.com.cn/${codename}/${songMeta['musicFile']}`
+			`https://charts.phicm.focalors.ltd/${codename}/${songMeta['musicFile']}`
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
@@ -197,7 +197,7 @@ function SongList({ defaultLevel = 'ez' }) {
 			.catch((err) => {
 				console.err(
 					'获取歌曲失败!',
-					`url: https://charts.phicommunity.com.cn/${codename}/${songMeta['musicFile']}`,
+					`url: https://charts.phicm.focalors.ltd/${codename}/${songMeta['musicFile']}`,
 					err
 				);
 			});

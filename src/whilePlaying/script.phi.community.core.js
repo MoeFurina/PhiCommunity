@@ -2709,14 +2709,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	//	获取元数据
 	console.log('Fetching MetaData:', play);
-	let metaURL='https://charts.phicommunity.com.cn/' + play + '/meta.json';
+	let metaURL='https://charts.phicm.focalors.ltd/' + play + '/meta.json';
 	if (play=='tutorial') {
 		const month=new Date().getMonth();
 		const day=new Date().getDate();
 		if (month===3&&day===1) {
 			//aprfus
 			console.log('Hello World!');
-			metaURL='https://charts.phicommunity.com.cn/' + play + '/meta.sp.json';
+			metaURL='https://charts.phicm.focalors.ltd/' + play + '/meta.sp.json';
 			setInterval(() => {
 				renderTutorialSPByTime(qwqIn.second);
 			}, 500);
@@ -2748,7 +2748,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			//	获取谱面
 			console.log('Fetching Chart:', play);
 			fetch(
-				'https://charts.phicommunity.com.cn/' +
+				'https://charts.phicm.focalors.ltd/' +
 					play +
 					'/' +
 					meta['chart' + level.toUpperCase()]
@@ -2791,7 +2791,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				'style',
 				'--background: url(' +
 					encodeURI(
-						'https://charts.phicommunity.com.cn/' +
+						'https://charts.phicm.focalors.ltd/' +
 							meta['codename'] +
 							'/' +
 							meta['illustration']
@@ -2799,7 +2799,7 @@ window.addEventListener('DOMContentLoaded', () => {
 					')'
 			);
 			fetch(
-				'https://charts.phicommunity.com.cn/' +
+				'https://charts.phicm.focalors.ltd/' +
 					meta['codename'] +
 					'/' +
 					meta['illustration']
@@ -2822,7 +2822,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				bgaVideo.muted='muted';
 				bgaVideo.style.display='none';
 				bgaVideo.setAttribute('crossOrigin', '');
-				bgaVideo.src='https://charts.phicommunity.com.cn/'+meta['codename']+'/'+meta['backgroundAnimation'];
+				bgaVideo.src='https://charts.phicm.focalors.ltd/'+meta['codename']+'/'+meta['backgroundAnimation'];
 				document.body.appendChild(bgaVideo);
 			}
 			//	判定线贴图
@@ -2833,7 +2833,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			if (meta.lineTexture) {
 				console.log('Line Texture Detected');
 				fetch(
-					'https://charts.phicommunity.com.cn/' +
+					'https://charts.phicm.focalors.ltd/' +
 						meta['codename'] +
 						'/' +
 						meta['lineTexture']
@@ -2848,13 +2848,13 @@ window.addEventListener('DOMContentLoaded', () => {
 						for (let i = 0; i < window.chartLine.length; i++) {
 							console.log(
 								'Fetching chart line texture:',
-								'https://charts.phicommunity.com.cn/' +
+								'https://charts.phicm.focalors.ltd/' +
 									meta['codename'] +
 									'/' +
 									chartLine[i].Image.toString()
 							);
 							fetch(
-								'https://charts.phicommunity.com.cn/' +
+								'https://charts.phicm.focalors.ltd/' +
 									meta['codename'] +
 									'/' +
 									chartLine[i].Image.toString()
@@ -2884,7 +2884,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			//	获取歌曲
 			console.log('Fetching Audio:', meta['musicFile']);
 			fetch(
-				'https://charts.phicommunity.com.cn/' +
+				'https://charts.phicm.focalors.ltd/' +
 					meta['codename'] +
 					'/' +
 					meta['musicFile']

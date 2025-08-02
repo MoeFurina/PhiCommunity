@@ -1,11 +1,20 @@
 import './style.redirect.css';
 window.addEventListener('DOMContentLoaded', () => {
-	fetch('https://api.github.com/repos/Yuameshi/PhiCommunity/commits')
-		.then((res) => res.json())
+	fetch('https://api.github.com/repos/MoeFurina/PhiCommunity/commits')
+		.then((res) => {
+			if (!res.ok) {
+				throw new Error(`HTTP error! status: ${res.status}`);
+			}
+			return res.json();
+		})
 		.then((data) => {
 			const changeLogFrame = document.querySelector(
 				'div#changelogContainer'
 			);
+			if (!Array.isArray(data)) {
+				console.error('获取提交历史失败：返回数据不是数组格式');
+				return;
+			}
 			data.forEach(({ commit, html_url, sha }) => {
 				const item = document.createElement('a');
 				item.classList.add('item');
@@ -14,6 +23,13 @@ window.addEventListener('DOMContentLoaded', () => {
 				item.innerText = commit.message;
 				changeLogFrame.appendChild(item);
 			});
+		})
+		.catch((error) => {
+			console.error('获取提交历史时出错:', error);
+			const changeLogFrame = document.querySelector('div#changelogContainer');
+			if (changeLogFrame) {
+				changeLogFrame.innerHTML = '<p class="error">获取提交历史失败，请稍后重试</p>';
+			}
 		});
 	const addBtn = document.querySelector('#installPWA');
 	addBtn.style.display = 'none';

@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	fetch(
-		'https://api.github.com/repos/Yuameshi/PhiCommunity-Charts-Repo/contents'
+		'https://api.github.com/repos/MoeFurina/PhiCommunity-Charts-Repo/contents'
 	)
 		.then((res) => res.json())
 		.then((response) => {
@@ -95,7 +95,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			for (let i = 0; i < window.songCodeNameList.length; i++) {
 				fetch(
 					encodeURI(
-						'https://charts.phicommunity.com.cn/' +
+						'https://charts.phicm.focalors.ltd/' +
 							window.songCodeNameList[i] +
 							'/meta.json'
 					)
@@ -152,7 +152,7 @@ window.addEventListener('DOMContentLoaded', () => {
 						);
 						fetch(
 							encodeURI(
-								'https://charts.phicommunity.com.cn/' +
+								'https://charts.phicm.focalors.ltd/' +
 									metaObj.codename +
 									'/' +
 									metaObj.illustration

@@ -156,7 +156,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	// }
 	// gradeImage
 	//	获取歌曲信息
-	fetch('https://charts.phicommunity.com.cn/' + play + '/meta.json')
+	fetch('https://charts.phicm.focalors.ltd/' + play + '/meta.json')
 		.then((response) => response.json())
 		.then((data) => {
 			window.window.playResult = {
@@ -228,7 +228,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.body.setAttribute(
 				'style',
 				`--background:url(${encodeURI(
-					'https://charts.phicommunity.com.cn/' +
+					'https://charts.phicm.focalors.ltd/' +
 						window.playResult.play +
 						'/' +
 						window.playResult.songInfo.illustration
@@ -239,7 +239,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				.setAttribute(
 					'src',
 					encodeURI(
-						'https://charts.phicommunity.com.cn/' +
+						'https://charts.phicm.focalors.ltd/' +
 							play +
 							'/' +
 							window.playResult.songInfo.illustration

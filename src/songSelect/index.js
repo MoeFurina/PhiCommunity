@@ -85,7 +85,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	for (let i = 0; i < window.songCodeNameList.length; i++) {
 		fetch(
 			encodeURI(
-				'https://charts.phicommunity.com.cn/' +
+				'https://charts.phicm.focalors.ltd/' +
 					window.songCodeNameList[i] +
 					'/meta.json'
 			)
