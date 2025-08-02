@@ -73,7 +73,13 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	fetch(
-		'https://api.github.com/repos/MoeFurina/PhiCommunity-Charts-Repo/contents'
+		'https://api.github.com/repos/MoeFurina/PhiCommunity-Charts-Repo/contents',
+		{
+			headers: {
+				'Authorization': `Bearer ${process.env.GITHUB_TOKEN}`,
+				'Accept': 'application/vnd.github.v3+json'
+			}
+		}
 	)
 		.then((res) => res.json())
 		.then((response) => {

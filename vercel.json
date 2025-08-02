@@ -5,5 +5,8 @@
     "outputDirectory": "dist",
     "github": {
         "silent": true
+    },
+    "env": {
+        "GITHUB_TOKEN": "@github-token"
     }
 }
