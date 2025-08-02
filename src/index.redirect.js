@@ -54,17 +54,17 @@ window.addEventListener('DOMContentLoaded', () => {
 	document
 		.querySelector('button#gotoCFPages')
 		.addEventListener('click', () => {
-			location.href = 'https://cf.phicommunity.com.cn';
+			location.href = 'https://cf.phicm.focalors.ltd';
 		});
 	document
 		.querySelector('button#gotoVercel')
 		.addEventListener('click', () => {
-			location.href = 'https://vercel.phicommunity.com.cn';
+			location.href = 'https://vercel.phicm.focalors.ltd';
 		});
 	document
 		.querySelector('button#gotoGHPages')
 		.addEventListener('click', () => {
-			location.href = 'https://phicommunity.com.cn';
+			location.href = 'https://phicm.focalors.ltd';
 		});
 	if (location.href.match('cf')) {
 		document.querySelector('button#gotoCFPages').style.display = 'none';
