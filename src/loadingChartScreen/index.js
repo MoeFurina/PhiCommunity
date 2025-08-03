@@ -1,5 +1,6 @@
 import './style.css';
 import tips from 'assets/tips.json';
+import { chartSource } from '../utils/chartSource.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 	const rndNum = parseInt(Math.random() * (tips.length + 1), 10);
@@ -12,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	const chart = parsedURLParams.get('c');
 	const level = parsedURLParams.get('l').toLowerCase();
 	fetch(
-		encodeURI('https://charts.phicm.focalors.ltd/' + chart + '/meta.json')
+		encodeURI(chartSource + '/' + chart + '/meta.json')
 	)
 		.then((response) => response.json())
 		.then((songInfoObj) => {
@@ -34,7 +35,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				.setAttribute(
 					'src',
 					encodeURI(
-						'https://charts.phicm.focalors.ltd/' +
+						chartSource + '/' +
 							chart +
 							'/' +
 							songInfoObj.illustration
@@ -44,7 +45,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				'style',
 				'--background: url(' +
 					encodeURI(
-						'https://charts.phicm.focalors.ltd/' +
+						chartSource + '/' +
 							chart +
 							'/' +
 							songInfoObj.illustration

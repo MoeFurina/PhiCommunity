@@ -8,6 +8,7 @@ import Pause_mp3 from 'assets/audio/Pause.mp3';
 import Exit_mp3 from 'assets/audio/Exit.mp3';
 import { renderTutorialSPByTime,renderTutorialByTime } from './tutorial.js';
 import { DB } from '../utils/DB.js';
+import { chartSource } from '../utils/chartSource.js';
 
 document.oncontextmenu = (e) => e.preventDefault(); //qwq
 //	切换提示框选项卡
@@ -2709,14 +2710,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
 	//	获取元数据
 	console.log('Fetching MetaData:', play);
-	let metaURL='https://charts.phicm.focalors.ltd/' + play + '/meta.json';
+	let metaURL=`${chartSource}/${play}/meta.json`;
 	if (play=='tutorial') {
 		const month=new Date().getMonth();
 		const day=new Date().getDate();
 		if (month===3&&day===1) {
 			//aprfus
 			console.log('Hello World!');
-			metaURL='https://charts.phicm.focalors.ltd/' + play + '/meta.sp.json';
+			metaURL=`${chartSource}/${play}/meta.sp.json`;
 			setInterval(() => {
 				renderTutorialSPByTime(qwqIn.second);
 			}, 500);
@@ -2748,10 +2749,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			//	获取谱面
 			console.log('Fetching Chart:', play);
 			fetch(
-				'https://charts.phicm.focalors.ltd/' +
-					play +
-					'/' +
-					meta['chart' + level.toUpperCase()]
+				`${chartSource}/${play}/${meta['chart' + level.toUpperCase()]}`
 			)
 				.then((res) => res.text())
 				.then((text) => {
@@ -2791,18 +2789,12 @@ window.addEventListener('DOMContentLoaded', () => {
 				'style',
 				'--background: url(' +
 					encodeURI(
-						'https://charts.phicm.focalors.ltd/' +
-							meta['codename'] +
-							'/' +
-							meta['illustration']
+						`${chartSource}/${meta['codename']}/${meta['illustration']}`
 					) +
 					')'
 			);
 			fetch(
-				'https://charts.phicm.focalors.ltd/' +
-					meta['codename'] +
-					'/' +
-					meta['illustration']
+				`${chartSource}/${meta['codename']}/${meta['illustration']}`
 			)
 				.then((response) => response.blob())
 				.then((blob) => {
@@ -2822,7 +2814,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				bgaVideo.muted='muted';
 				bgaVideo.style.display='none';
 				bgaVideo.setAttribute('crossOrigin', '');
-				bgaVideo.src='https://charts.phicm.focalors.ltd/'+meta['codename']+'/'+meta['backgroundAnimation'];
+				bgaVideo.src=`${chartSource}/${meta['codename']}/${meta['backgroundAnimation']}`;
 				document.body.appendChild(bgaVideo);
 			}
 			//	判定线贴图
@@ -2833,10 +2825,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			if (meta.lineTexture) {
 				console.log('Line Texture Detected');
 				fetch(
-					'https://charts.phicm.focalors.ltd/' +
-						meta['codename'] +
-						'/' +
-						meta['lineTexture']
+					`${chartSource}/${meta['codename']}/${meta['lineTexture']}`
 				)
 					.then((res) => res.json())
 					.then((data) => {
@@ -2848,16 +2837,10 @@ window.addEventListener('DOMContentLoaded', () => {
 						for (let i = 0; i < window.chartLine.length; i++) {
 							console.log(
 								'Fetching chart line texture:',
-								'https://charts.phicm.focalors.ltd/' +
-									meta['codename'] +
-									'/' +
-									chartLine[i].Image.toString()
+								`${chartSource}/${meta['codename']}/${chartLine[i].Image.toString()}`
 							);
 							fetch(
-								'https://charts.phicm.focalors.ltd/' +
-									meta['codename'] +
-									'/' +
-									chartLine[i].Image.toString()
+								`${chartSource}/${meta['codename']}/${chartLine[i].Image.toString()}`
 							)
 								.then((response) => response.blob())
 								.then((blob) => {
@@ -2884,10 +2867,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			//	获取歌曲
 			console.log('Fetching Audio:', meta['musicFile']);
 			fetch(
-				'https://charts.phicm.focalors.ltd/' +
-					meta['codename'] +
-					'/' +
-					meta['musicFile']
+				`${chartSource}/${meta['codename']}/${meta['musicFile']}`
 			)
 				.then((response) => response.arrayBuffer())
 				.then((arrayBuffer) => {

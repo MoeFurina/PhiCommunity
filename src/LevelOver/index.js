@@ -13,6 +13,7 @@ import B15B from 'assets/images/B15B.svg';
 import C15C from 'assets/images/C15C.svg';
 import F15F from 'assets/images/F15F.svg';
 import { gameLevels } from '../constants.js';
+import { chartSource } from '../utils/chartSource.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 	const actx = new (window.AudioContext ||
@@ -156,7 +157,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	// }
 	// gradeImage
 	//	获取歌曲信息
-	fetch('https://charts.phicm.focalors.ltd/' + play + '/meta.json')
+	fetch(chartSource + '/' + play + '/meta.json')
 		.then((response) => response.json())
 		.then((data) => {
 			window.window.playResult = {
@@ -228,7 +229,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			document.body.setAttribute(
 				'style',
 				`--background:url(${encodeURI(
-					'https://charts.phicm.focalors.ltd/' +
+					chartSource + '/' +
 						window.playResult.play +
 						'/' +
 						window.playResult.songInfo.illustration
@@ -239,7 +240,7 @@ window.addEventListener('DOMContentLoaded', () => {
 				.setAttribute(
 					'src',
 					encodeURI(
-						'https://charts.phicm.focalors.ltd/' +
+						chartSource + '/' +
 							play +
 							'/' +
 							window.playResult.songInfo.illustration

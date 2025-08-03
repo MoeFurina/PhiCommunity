@@ -2,6 +2,7 @@ import { SongList } from './SongList.js';
 // import { gameLevels } from '../constants.js';
 import Start_mp3 from 'assets/audio/Start.mp3';
 import './style.css';
+import { chartSource } from '../utils/chartSource.js';
 
 const songList = SongList({ defaultLevel: 'ez' });
 
@@ -85,7 +86,7 @@ window.addEventListener('DOMContentLoaded', () => {
 	for (let i = 0; i < window.songCodeNameList.length; i++) {
 		fetch(
 			encodeURI(
-				'https://charts.phicm.focalors.ltd/' +
+				chartSource + '/' +
 					window.songCodeNameList[i] +
 					'/meta.json'
 			)

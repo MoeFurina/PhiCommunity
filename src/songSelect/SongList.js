@@ -1,6 +1,7 @@
 import { gameLevels } from '../constants.js';
 import selectSongItem_mp3 from 'assets/audio/selectSongItem.mp3';
-import {DB} from '../utils/DB.js';
+import { DB } from '../utils/DB.js';
+import { chartSource } from '../utils/chartSource.js';
 
 function SongList({ defaultLevel = 'ez' }) {
 	const listElement = document.createElement('div');
@@ -103,7 +104,7 @@ function SongList({ defaultLevel = 'ez' }) {
 			currentLevelSelected = [nextLevel];
 		}
 		fetch(
-			`https://charts.phicm.focalors.ltd/${codename}/${songMeta['illustration']}`
+			`${chartSource}/${codename}/${songMeta['illustration']}`
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
@@ -115,14 +116,14 @@ function SongList({ defaultLevel = 'ez' }) {
 				document.querySelector('img.illustration').src = imgUrl;
 			})
 			.catch((err) => {
-				console.err(
+				console.error(
 					'获取曲绘失败!',
-					`url: https://charts.phicm.focalors.ltd/${codename}/${songMeta['illustration']}`,
+					`url: ${chartSource}/${codename}/${songMeta['illustration']}`,
 					err
 				);
 			});
 		fetch(
-			`https://charts.phicm.focalors.ltd/${codename}/${songMeta['musicFile']}`
+			`${chartSource}/${codename}/${songMeta['musicFile']}`
 		)
 			.then((response) => response.blob())
 			.then((blob) => {
@@ -195,9 +196,9 @@ function SongList({ defaultLevel = 'ez' }) {
 					});
 			})
 			.catch((err) => {
-				console.err(
+				console.error(
 					'获取歌曲失败!',
-					`url: https://charts.phicm.focalors.ltd/${codename}/${songMeta['musicFile']}`,
+					`url: ${chartSource}/${codename}/${songMeta['musicFile']}`,
 					err
 				);
 			});

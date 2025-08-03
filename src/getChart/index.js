@@ -1,4 +1,5 @@
 import './style.css';
+import { chartSource } from '../utils/chartSource.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 	let loadingEmbedFrame = document.createElement('iframe');
@@ -73,7 +74,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 		});
 	fetch(
-		'https://charts.phicm.focalors.ltd/content.json'
+		chartSource + '/content.json'
 	)
 		.then((res) => res.json())
 		.then((response) => {
@@ -95,7 +96,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			for (let i = 0; i < window.songCodeNameList.length; i++) {
 				fetch(
 					encodeURI(
-						'https://charts.phicm.focalors.ltd/' +
+						chartSource + '/' +
 							window.songCodeNameList[i] +
 							'/meta.json'
 					)
@@ -152,7 +153,7 @@ window.addEventListener('DOMContentLoaded', () => {
 						);
 						fetch(
 							encodeURI(
-								'https://charts.phicm.focalors.ltd/' +
+								chartSource + '/' +
 									metaObj.codename +
 									'/' +
 									metaObj.illustration

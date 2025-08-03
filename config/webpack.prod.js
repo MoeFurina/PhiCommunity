@@ -16,7 +16,7 @@ module.exports = (env) => {
 			test: /\.js$/,
 			loader: 'string-replace-loader',
 			options: {
-				search: /https:\/\/charts\.phicommunity\.com\.cn/gi,
+				search: /https:\/\/charts\.focalors\.ltd/gi,
 				replace: chartsSource,
 			},
 		});
