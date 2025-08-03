@@ -82,7 +82,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			for (let i = 0; i < response.length; i++) {
 				if (
 					response[i].name.match(
-						/.github|README.md|CNAME|_headers|ouroVoros|tutorial/
+						/.github|README.md|CNAME|_headers|ouroVoros|tutorial|content/
 					) != null
 				) {
 					continue;
@@ -91,7 +91,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			}
 			// window.songCodeNameList = JSON.parse(songListXHR.responseText);
 			window.songMetaList = new Array();
-
+			console.log('曲目列表获取成功，共有 ' + window.songCodeNameList.length + ' 首曲目');
 			for (let i = 0; i < window.songCodeNameList.length; i++) {
 				fetch(
 					encodeURI(
