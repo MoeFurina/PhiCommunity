@@ -11,9 +11,6 @@ importers:
       dom-element-factory:
         specifier: ^1.5.0
         version: 1.5.15
-      dotenv:
-        specifier: ^17.2.1
-        version: 17.2.1
       oggmented:
         specifier: ^1.0.1
         version: 1.0.1
@@ -42,6 +39,9 @@ importers:
       css-loader:
         specifier: ^6.6.0
         version: 6.11.0(webpack@5.101.0)
+      dotenv:
+        specifier: ^17.2.1
+        version: 17.2.1
       eslint:
         specifier: ^8.13.0
         version: 8.57.1

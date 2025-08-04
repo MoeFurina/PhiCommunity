@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { GitRevisionPlugin } = require('git-revision-webpack-plugin');
+require('dotenv').config();
 
 const path = require('path');
 
@@ -98,6 +99,9 @@ module.exports = {
 		gitRevisionPlugin,
 		new webpack.DefinePlugin({
 			$VERSION: JSON.stringify(gitRevisionPlugin.version()),
+			'process.env.CHARTS_SOURCE': JSON.stringify(process.env.CHARTS_SOURCE),
+			'process.env.CHARTS_SOURCE_CF': JSON.stringify(process.env.CHARTS_SOURCE_CF),
+			'process.env.CHARTS_SOURCE_VERCEL': JSON.stringify(process.env.CHARTS_SOURCE_VERCEL),
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash].css',

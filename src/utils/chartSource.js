@@ -1,8 +1,8 @@
 export const chartSource = isCloudflarePages()
-	? 'https://cf.charts.phicm.focalors.ltd'
+	? process.env.CHARTS_SOURCE_CF
 	: isVercel()
-	? 'https://vercel.charts.phicm.focalors.ltd'
-	: 'https://charts.phicm.focalors.ltd';
+	? process.env.CHARTS_SOURCE_VERCEL
+	: process.env.CHARTS_SOURCE
 
 function isCloudflarePages() {
 	return window.location.hostname.includes('cf');
