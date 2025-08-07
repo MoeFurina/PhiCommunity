@@ -1,12 +1,12 @@
 # 这是什么？
 
-这是一款名为`PhiCommunity`的节奏游戏，它仿照`Phigros`制作。
+这是一款名为`PhiCommunity`的节奏游戏分支版本，它仿照`Phigros`制作，源仓库为[PhiCommunity](https://github.com/yuameshi/phicommunity)
 
-# APP 已发布(测试版本)
+# APP 已发布(原作者仓库)
 
-请前往[Actions - PhiCommunityAPP](https://github.com/MoeFurina/PhiCommunityAPP/actions)的最新构建下载 Artifact，此构建为`Debug`构建，仅用于测试。
+请前往[Actions - PhiCommunityAPP](https://github.com/yuameshi/PhiCommunityAPP/actions)的最新构建下载 Artifact，此构建为`Debug`构建，仅用于测试。
 
-您也可以前往[Releases - PhiCommunityAPP](https://github.com/MoeFurina/PhiCommunityAPP/releases)下载发行版本（如果有）。
+您也可以前往[Releases - PhiCommunityAPP](https://github.com/yuameshi/PhiCommunityAPP/releases)下载发行版本（如果有）。
 
 # 许可证
 
@@ -57,7 +57,7 @@ GNU Affero 通用公共许可证 v3.0
 
 ## 为`谱面`做贡献
 
-如需提交谱面文件，请前往[此仓库](https://github.com/MoeFurina/PhiCommunity-Charts-Repo)。
+如需提交谱面文件，请前往[此仓库](https://github.com/phigamerevive/PhiCommunity-Charts-Repo)。
 
 ## 贡献代码
 
