@@ -102,6 +102,7 @@ module.exports = {
 			'process.env.CHARTS_SOURCE': JSON.stringify(process.env.CHARTS_SOURCE),
 			'process.env.CHARTS_SOURCE_CF': JSON.stringify(process.env.CHARTS_SOURCE_CF),
 			'process.env.CHARTS_SOURCE_VERCEL': JSON.stringify(process.env.CHARTS_SOURCE_VERCEL),
+			'process.env.CHARTS_SOURCE_EO': JSON.stringify(process.env.CHARTS_SOURCE_EO),
 		}),
 		new MiniCssExtractPlugin({
 			filename: 'css/[name].[contenthash].css',
