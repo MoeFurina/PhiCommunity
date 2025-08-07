@@ -1,10 +1,14 @@
-export const chartSource = isCloudflarePages()
-	? process.env.CHARTS_SOURCE_CF
-	: isVercel()
-	? process.env.CHARTS_SOURCE_VERCEL
-	: isEdgeOne()
-	? process.env.CHARTS_SOURCE_EO
-	: process.env.CHARTS_SOURCE
+export const chartSource = () => {
+	if (isCloudflarePages()) {
+		return process.env.CHARTS_SOURCE_CF;
+	} else if (isVercel()) {
+		return process.env.CHARTS_SOURCE_VERCEL;
+	} else if (isEdgeOne()) {
+		return process.env.CHARTS_SOURCE_EO;
+	} else {
+		return process.env.CHARTS_SOURCE;
+	}
+}
 
 function isCloudflarePages() {
 	return window.location.hostname.includes('cf');
