@@ -57,6 +57,11 @@ window.addEventListener('DOMContentLoaded', () => {
 			location.href = 'https://cf.phicm.focalors.ltd';
 		});
 	document
+		.querySelector('button#gotoEO')
+		.addEventListener('click', () => {
+			location.href = 'https://eo.phicm.focalors.ltd';
+		});
+	document
 		.querySelector('button#gotoVercel')
 		.addEventListener('click', () => {
 			location.href = 'https://vercel.phicm.focalors.ltd';
@@ -70,11 +75,13 @@ window.addEventListener('DOMContentLoaded', () => {
 		document.querySelector('button#gotoCFPages').style.display = 'none';
 	} else if (location.href.match('vercel')) {
 		document.querySelector('button#gotoVercel').style.display = 'none';
+	} else if (location.href.match('eo')) {
+		document.querySelector('button#gotoEO').style.display = 'none';
 	} else {
 		document.querySelector('button#gotoGHPages').style.display = 'none';
 	}
 	document.querySelector('button#ghRepo').addEventListener('click', () => {
-		window.open('https://github.com/MoeFurina/PhiCommunity');
+		window.open('https://github.com/phigamerevive/PhiCommunity');
 	});
 	document.querySelector('button#deviceReq').addEventListener('click', () => {
 		document
