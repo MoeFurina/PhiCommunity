@@ -1,8 +1,6 @@
 <div align="center">
 <img alt="logo" height="80" src="./public/AppIcon.png" />
-<h1>PhiCommunity R## 🤝 如何贡献
-
-如您所见，游戏还没有完成，具体体现在"谱面少"和"性能差"。ve</h1>
+<h1>PhiCommunity Revive</h1>
 
 <p>A fork version of Phicommunity</p>
 </div>
@@ -99,7 +97,7 @@ GNU Affero 通用公共许可证 v3.0
 </details>
 <br >
 
-对于多媒体资源，我们保留著作权。
+对于多媒体资源，原作者的团队保留著作权。
 
 > 对于`多媒体资源`的定义
 >
