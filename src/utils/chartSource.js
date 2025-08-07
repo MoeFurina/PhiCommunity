@@ -1,4 +1,14 @@
-export const chartSource = () => {
+function isCloudflarePages() {
+	return window.location.hostname.includes('cf');
+}
+function isVercel() {
+	return window.location.hostname.includes('vercel');
+}
+function isEdgeOne() {
+	return window.location.hostname.includes('eo');
+}
+
+export function getChartSource() {
 	if (isCloudflarePages()) {
 		return process.env.CHARTS_SOURCE_CF;
 	} else if (isVercel()) {
@@ -10,12 +20,6 @@ export const chartSource = () => {
 	}
 }
 
-function isCloudflarePages() {
-	return window.location.hostname.includes('cf');
-}
-function isVercel() {
-	return window.location.hostname.includes('vercel');
-}
-function isEdgeOne() {
-	return window.location.hostname.includes('eo');
-}
+
+export const chartSource = getChartSource();
+
