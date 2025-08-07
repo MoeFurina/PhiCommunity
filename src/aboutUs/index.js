@@ -6,7 +6,7 @@ import { Trigger } from './Trigger';
 const thanks = [
 	`At First / 写在前面
 	由雨糸 (Yuameshi)
-	如你所见，PhiCommunity是一个仿照Phigros制作基于HTML5的游戏。
+	如你所见，PhiCommunity是一个仿照Phigros制作基于HTML5的游戏(Revived by MoeFurina)。
 	也感谢Pigeon Games创造出Phigros这一如此好玩的游戏。
 	顺便这里特别感谢lchzh3473的Phigros模拟器，没有它，这个项目消耗的时间可能要长数倍。
 	PhiCommunity已经在GitHub开源，人人皆可贡献。
