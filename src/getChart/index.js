@@ -83,7 +83,7 @@ window.addEventListener('DOMContentLoaded', () => {
 			for (let i = 0; i < response.length; i++) {
 				if (
 					response[i].name.match(
-						/.github|README.md|CNAME|_headers|ouroVoros|tutorial|content/
+						/.github|README.md|CNAME|_headers|ouroVoros|tutorial|content|edgeone/
 					) != null
 				) {
 					continue;
